@@ -82,7 +82,8 @@ pip install -r requirements.txt
 ## **Utilisation**
 
 ### **Exécution du script en ligne de commande (sans alias)**
-
+Pour l'exécution sans alias vous devez soit être dans le dossier du projet soit avoir le chemain absolu du fichier main.py
+## Dans notre cas on considère que nous sommes dans le dossier du projet
 #### **Création d'une table**
 ```bash
 python3 main.py create --db <nom_db> --table <nom_table> --columns <colonne1:type1> <colonne2:type2> ...
