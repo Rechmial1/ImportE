@@ -8,4 +8,4 @@ Ce projet permet de créer, importer, et gérer une base de données SQLite via 
 
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/ton-utilisateur/importE.git
+   git clone https://github.com/Rechmial1/ImportE.git
