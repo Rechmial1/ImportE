@@ -183,7 +183,7 @@ source ~/.bashrc
 
 ### **Activation de l’environnement virtuel**
 Avant d'exécuter toute commande, assurez-vous d'activer l'environnement virtuel :
-### *Tout d'abord aller dans le répertoire de votre projet et taper cette commande : *
+### *Tout d'abord aller dans le répertoire de votre projet et taper cette commande :*
 ```bash
 source venv/bin/activate
 ```
