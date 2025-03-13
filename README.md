@@ -59,3 +59,42 @@ Ce projet permet de créer, importer, et gérer une base de données SQLite via 
     python importE/main.py describe --db <nom_db> --table <nom_table>
     ```
    Exemple : python importE/main.py describe --db personnes --table utilisateurs
+
+
+
+Initialiser le dépôt Git
+
+Dans ton terminal, exécute les commandes suivantes pour initialiser le dépôt et pousser ton code vers GitHub :
+
+```bash
+cd chemin/vers/ton/projet
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/Rechmial1/ImportE.git
+git push -u origin master
+```
+Rendre le fichier exécutable
+1. Dans ton terminal, donne les permissions d'exécution à ton script :
+
+```bash
+chmod +x importE/main.py
+```
+2. Créer un alias pour exécuter le script avec une commande courte
+Si tu veux pouvoir exécuter ton script avec une commande plus courte comme importE, tu peux ajouter un alias dans ton fichier ~/.bashrc ou ~/.zshrc (selon ton shell) :
+
+Ouvre ton fichier .bashrc (ou .zshrc) avec un éditeur de texte :
+```bash
+nano ~/.bashrc
+```
+Ajoute cette ligne à la fin du fichier :
+```bash
+alias importE="python3 /chemin/vers/ton/projet/importE/main.py"
+```
+Puis recharge ton fichier de configuration :
+```bash
+source ~/.bashrc
+```
+Désormais, tu peux exécuter ton script en utilisant simplement importE :
+
+Exemple : importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
