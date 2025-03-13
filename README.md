@@ -61,19 +61,8 @@ Ce projet permet de créer, importer, et gérer une base de données SQLite via 
    Exemple : python importE/main.py describe --db personnes --table utilisateurs
 
 
+Exécutez le script avec Python pour utiliser les commandes suivantes ( Avec l'utilisation d'alias )  :
 
-Initialiser le dépôt Git
-
-Dans ton terminal, exécute les commandes suivantes pour initialiser le dépôt et pousser ton code vers GitHub :
-
-```bash
-cd chemin/vers/ton/projet
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/Rechmial1/ImportE.git
-git push -u origin master
-```
 Rendre le fichier exécutable
 1. Dans ton terminal, donne les permissions d'exécution à ton script :
 
