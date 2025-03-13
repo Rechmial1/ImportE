@@ -195,3 +195,46 @@ Une fois l’alias configuré, il est possible d’exécuter les commandes en ut
 ```bash
 importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
 ```
+
+### *Ouvrir la base avec SQLite en ligne de commande*
+### Installer sqlite3
+````bash
+sudo apt update
+sudo apt install sqlite3
+````
+### Ouvrir la base de données 
+````bash
+sqlite3 <nom_base>
+````
+**Exemple :**
+```bash
+sqlite3 personnes
+```
+### Puis, une fois dans SQLite :
+  ### Lister les tables :
+  ````bash
+  .tables
+  ````
+
+  ### Voir la structure d'une table :
+  ````bash
+    .schema <nom_de_la_table>
+  ````
+  **Exemple :**
+  ```bash
+  .schema utilisateurs
+  ```
+
+  ### Afficher les données :
+  ````bash
+  SELECT * FROM <nom_de_la_table>;
+  ````
+  **Exemple :**
+  ```bash
+  .SELECT * FROM utilisateurs;
+  ```
+
+  ### Quitter :
+  ````bash
+  .exit
+  ````
