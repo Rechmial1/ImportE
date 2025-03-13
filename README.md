@@ -1,146 +1,196 @@
-# importE - Outil de gestion de base de données SQLite en ligne de commande
+# **ImportE - Outil d'importation de fichiers Excel dans une base de données SQLite en ligne de commande**
 
-## Description
+## **Description**
 
-Ce projet permet de créer, importer, et gérer une base de données SQLite via un fichier Excel. Il offre aussi des commandes pour lister les tables, afficher leur contenu et plus encore, tout cela via une interface en ligne de commande (CLI).
+Ce projet permet de créer, importer et administrer une base de données SQLite à partir d'un fichier Excel. Il propose également diverses commandes permettant de lister les tables, d'afficher leur contenu et d'exécuter d'autres opérations, le tout via une interface en ligne de commande (CLI).
 
-## Installation
+## **Installation**
 
-## Installer Python 3 et pip :
-   ## Mettre à jour les paquets :
-   ````bash
-   sudo apt update
-   ````
-   ## Installer Python 3 :
-   Python 3 est généralement inclus dans les dépôts par défaut. Installe-le avec la commande suivante :
-   ````bash
-   sudo apt install python3
-   ````
-   ## Installer pip pour Python 3 :
-   Une fois Python installé, tu peux installer pip (le gestionnaire de paquets pour Python) avec la commande suivante :
-   ````bash
-   sudo apt install python3-pip
-   ````
-   ## Vérifier l'installation :
-   Une fois l'installation terminée, tu peux vérifier que Python et pip sont correctement installés en vérifiant leurs versions :
-   ````bash
-   python3 --version
-   pip3 --version
-   ````
-   Si tout est installé correctement, cela te donnera quelque chose comme :
-   ````bash
-   Python 3.x.x
-   pip 20.x.x
-   ````
+### **Installation de Python 3 et de pip**
 
-## Clonez ce dépôt :
-   ```bash
-   git clone https://github.com/Rechmial1/ImportE.git
-   ```
-   ## Aller dans le dossier 
-   ```bash
-   cd ImportE
-   ````
-   ## Crée un environnement virtuel :
-   ````bash 
-   python3 -m venv venv
-   ````
-   Cela créera un répertoire venv dans lequel toutes les dépendances seront installées.
+#### **Mise à jour des paquets**
+Avant toute installation, assurez-vous que votre système est à jour en exécutant la commande suivante :
 
-   ## Active l'environnement virtuel :
-   Une fois l'environnement créé, active-le pour pouvoir installer les dépendances dans cet environnement isolé.
-   ````bash
-   source venv/bin/activate
-   ````
-## Installez les dépendances :
-   ```bash
-   pip install -r requirements.txt
-   ````
+```bash
+sudo apt update
+```
 
-## Utilisation : Cas 1
-   ## Exécutez le script avec Python pour utiliser les commandes suivantes ( Sans l'utilisation d'alias )  :
-   
-   1. Créer une table :
-      ```bash
-      python3 main.py create --db <nom_db> --table <nom_table> --columns <colonne1:type1> <colonne2:type2> ...
-      ```
-      Exemple : python3 main.py create --db personnes --table utilisateurs --columns matricule:TEXT nom:TEXT prenom:TEXT date_naissance:DATE status:TEXT
+#### **Installation de Python 3**
+Python 3 est généralement inclus dans les dépôts officiels des distributions Linux. Pour l'installer, utilisez la commande suivante :
 
-   3. Types de données valides :
-      Les types valides pour les colonnes sont : TEXT, INTEGER, REAL, BLOB, DATE
+```bash
+sudo apt install python3
+```
 
-   4. Importer un fichier Excel dans une table :
-      ```bash
-      python3 main.py import --db <nom_db> --table <nom_table> --file <chemin_fichier_excel>
-      ```
-      Exemple : python3 main.py import --db personnes --table utilisateurs --file /chemin/vers/fichier.xlsx
+#### **Installation de pip pour Python 3**
+Une fois Python installé, vous pouvez installer pip, le gestionnaire de paquets de Python, en exécutant la commande suivante :
 
-   6. Supprimer une table :
-      ```bash
-      python3 main.py delete --db <nom_db> --table <nom_table>
-      ```
-      Exemple : python3 main.py delete --db personnes --table utilisateurs
+```bash
+sudo apt install python3-pip
+```
 
-   8. Supprimer la base de données :
-      ```bash
-      python3 main.py delete-db --db <nom_db>
-      ```
-      Exemple : python3 main.py delete-db --db personnes
+#### **Vérification de l'installation**
+Après l’installation, il est recommandé de vérifier que Python et pip sont correctement installés en affichant leurs versions respectives :
 
-   10. Lister les tables :
-       ```bash
-       python3 main.py list-tables --db <nom_db>
-       ```
-   Exemple : python3 main.py list-tables --db personnes
+```bash
+python3 --version
+pip3 --version
+```
 
-   12. Voir le contenu d'une table :
-       ```bash
-       python3 main.py view --db <nom_db> --table <nom_table>
-       ```
-   Exemple : python3 main.py view --db personnes --table utilisateurs
+Si l'installation a été effectuée avec succès, vous devriez obtenir un affichage similaire à celui-ci :
 
-   14. Voir la structure d'une table (DESCRIBE) :
-       ```bash
-       python3 main.py describe --db <nom_db> --table <nom_table>
-       ```
-   Exemple : python3 main.py describe --db personnes --table utilisateurs
+```bash
+Python 3.x.x
+pip 20.x.x
+```
 
+---
 
-## Exécutez le script avec Python pour utiliser les commandes suivantes ( Avec l'utilisation d'alias )  :
-Rendre le fichier exécutable
-1. Dans ton terminal, donne les permissions d'exécution à ton script :
+## **Clonage du dépôt**
+
+```bash
+git clone https://github.com/Rechmial1/ImportE.git
+```
+
+### **Accès au répertoire du projet**
+```bash
+cd ImportE
+```
+
+### **Création d'un environnement virtuel**
+```bash
+python3 -m venv venv
+```
+Cette commande génère un répertoire `venv` contenant toutes les dépendances isolées nécessaires au projet.
+
+### **Activation de l'environnement virtuel**
+Une fois l’environnement virtuel créé, il est impératif de l’activer avant d’installer les dépendances requises.
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## **Installation des dépendances**
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## **Utilisation**
+
+### **Exécution du script en ligne de commande (sans alias)**
+
+#### **Création d'une table**
+```bash
+python3 main.py create --db <nom_db> --table <nom_table> --columns <colonne1:type1> <colonne2:type2> ...
+```
+**Exemple :**
+```bash
+python3 main.py create --db personnes --table utilisateurs --columns matricule:TEXT nom:TEXT prenom:TEXT date_naissance:DATE status:TEXT
+```
+
+#### **Types de données valides**
+Les types de données acceptés pour les colonnes sont : `TEXT`, `INTEGER`, `REAL`, `BLOB`, `DATE`.
+
+#### **Importation d’un fichier Excel dans une table**
+```bash
+python3 main.py import --db <nom_db> --table <nom_table> --file <chemin_fichier_excel>
+```
+**Exemple :**
+```bash
+python3 main.py import --db personnes --table utilisateurs --file /chemin/vers/fichier.xlsx
+```
+
+#### **Suppression d'une table**
+```bash
+python3 main.py delete --db <nom_db> --table <nom_table>
+```
+**Exemple :**
+```bash
+python3 main.py delete --db personnes --table utilisateurs
+```
+
+#### **Suppression de la base de données**
+```bash
+python3 main.py delete-db --db <nom_db>
+```
+**Exemple :**
+```bash
+python3 main.py delete-db --db personnes
+```
+
+#### **Affichage de la liste des tables**
+```bash
+python3 main.py list-tables --db <nom_db>
+```
+**Exemple :**
+```bash
+python3 main.py list-tables --db personnes
+```
+
+#### **Affichage du contenu d'une table**
+```bash
+python3 main.py view --db <nom_db> --table <nom_table>
+```
+**Exemple :**
+```bash
+python3 main.py view --db personnes --table utilisateurs
+```
+
+#### **Affichage de la structure d'une table (DESCRIBE)**
+```bash
+python3 main.py describe --db <nom_db> --table <nom_table>
+```
+**Exemple :**
+```bash
+python3 main.py describe --db personnes --table utilisateurs
+```
+
+---
+
+## **Exécution du script avec un alias**
+
+### **Rendre le script exécutable**
+Avant de pouvoir utiliser un alias, il est nécessaire de rendre le script exécutable :
 
 ```bash
 chmod +x main.py
 ```
-2. Créer un alias pour exécuter le script avec une commande courte
-Si tu veux pouvoir exécuter ton script avec une commande plus courte comme importE, tu peux ajouter un alias dans ton fichier ~/.bashrc ou ~/.zshrc (selon ton shell) :
 
-Ouvre ton fichier .bashrc (ou .zshrc) avec un éditeur de texte :
+### **Création d'un alias pour simplifier l’exécution du script**
+Si vous souhaitez exécuter le script avec une commande plus concise, comme `importE`, vous pouvez définir un alias dans votre fichier de configuration Shell (`~/.bashrc` ou `~/.zshrc`).
+
+Ouvrez le fichier de configuration avec un éditeur de texte :  
 ```bash
 nano ~/.bashrc
 ```
-Ajoute cette ligne à la fin du fichier :
+
+Ajoutez la ligne suivante à la fin du fichier :  
 ```bash
 alias importE="python3 /chemin/vers/ton/projet/importE/main.py"
 ```
-Puis recharge ton fichier de configuration :
+
+Rechargez ensuite le fichier de configuration pour appliquer les modifications :  
 ```bash
 source ~/.bashrc
 ```
 
-   ## Aller dans le dossier 
-   ```bash
-   cd ImportE
-   ````
-   Cela créera un répertoire venv dans lequel toutes les dépendances seront installées.
+---
 
-   ## Active l'environnement virtuel :
-   Une fois l'environnement créé, active-le pour pouvoir installer les dépendances dans cet environnement isolé.
-   ````bash
-   source venv/bin/activate
-   ````
+### **Activation de l’environnement virtuel**
+Avant d'exécuter toute commande, assurez-vous d'activer l'environnement virtuel :
 
-Désormais, tu peux exécuter ton script en utilisant simplement importE :
+```bash
+source venv/bin/activate
+```
 
-Exemple : importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
+### **Exécution du script avec l’alias**
+Une fois l’alias configuré, il est possible d’exécuter les commandes en utilisant `importE` directement.
+
+**Exemple :**  
+```bash
+importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
+```
