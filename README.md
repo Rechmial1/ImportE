@@ -171,7 +171,7 @@ nano ~/.bashrc
 
 Ajoutez la ligne suivante à la fin du fichier :  
 ```bash
-alias importE="python3 /chemin/vers/ton/projet/importE/main.py"
+alias importE="python3 /chemin/vers/votre/projet/importE/main.py"
 ```
 
 Rechargez ensuite le fichier de configuration pour appliquer les modifications :  
@@ -183,14 +183,14 @@ source ~/.bashrc
 
 ### **Activation de l’environnement virtuel**
 Avant d'exécuter toute commande, assurez-vous d'activer l'environnement virtuel :
-
+*Tout d'abord aller dans le répertoire de votre projet*
 ```bash
 source venv/bin/activate
 ```
 
 ### **Exécution du script avec l’alias**
 Une fois l’alias configuré, il est possible d’exécuter les commandes en utilisant `importE` directement.
-
+*Assurez-vous d'activer l'environnement au préalable* 
 **Exemple :**  
 ```bash
 importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
