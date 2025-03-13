@@ -13,20 +13,49 @@ Ce projet permet de créer, importer, et gérer une base de données SQLite via 
    ```bash
    pip install -r requirements.txt
 3. Utilisation
-   Exécutez le script avec Python pour utiliser les commandes suivantes :
+   Exécutez le script avec Python pour utiliser les commandes suivantes ( Sans l'utilisation d'alias )  :
    
-A. Créer une table :
+1. Créer une table :
    ```bash
-   python importE/main.py create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
+   python importE/main.py create --db <nom_db> --table <nom_table> --columns <colonne1:type1> <colonne2:type2> ...
    ```
-B. Importer un fichier Excel :
+   Exemple : python importE/main.py create --db personnes --table utilisateurs --columns matricule:TEXT nom:TEXT prenom:TEXT date_naissance:DATE status:TEXT
+
+3. Types de données valides :
+   Les types valides pour les colonnes sont : TEXT, INTEGER, REAL, BLOB, DATE
+
+4. Importer un fichier Excel dans une table :
    ```bash
-   python importE/main.py import --db ma_base --table ma_table --file chemin/vers/fichier.xlsx
+   python importE/main.py import --db <nom_db> --table <nom_table> --file <chemin_fichier_excel>
    ```
-C. Lister les tables :
+   Exemple : python importE/main.py import --db personnes --table utilisateurs --file /chemin/vers/fichier.xlsx
+
+6. Supprimer une table :
    ```bash
-   python importE/main.py list --db ma_base
+   python importE/main.py delete --db <nom_db> --table <nom_table>
    ```
-D. Afficher le contenu d'une table :
+   Exemple : python importE/main.py delete --db personnes --table utilisateurs
+
+8. Supprimer la base de données :
    ```bash
-   python importE/main.py describe --db ma_base --table ma_table
+   python importE/main.py delete-db --db <nom_db>
+   ```
+   Exemple : python importE/main.py delete-db --db personnes
+
+10. Lister les tables :
+    ```bash
+    python importE/main.py list-tables --db <nom_db>
+    ```
+   Exemple : python importE/main.py list-tables --db personnes
+
+12. Voir le contenu d'une table :
+    ```bash
+    python importE/main.py view --db <nom_db> --table <nom_table>
+    ```
+   Exemple : python importE/main.py view --db personnes --table utilisateurs
+
+14. Voir la structure d'une table (DESCRIBE) :
+    ```bash
+    python importE/main.py describe --db <nom_db> --table <nom_table>
+    ```
+   Exemple : python importE/main.py describe --db personnes --table utilisateurs
