@@ -183,14 +183,14 @@ source ~/.bashrc
 
 ### **Activation de l’environnement virtuel**
 Avant d'exécuter toute commande, assurez-vous d'activer l'environnement virtuel :
-*Tout d'abord aller dans le répertoire de votre projet*
+### *Tout d'abord aller dans le répertoire de votre projet et taper cette commande : *
 ```bash
 source venv/bin/activate
 ```
 
 ### **Exécution du script avec l’alias**
 Une fois l’alias configuré, il est possible d’exécuter les commandes en utilisant `importE` directement.
-*Assurez-vous d'activer l'environnement au préalable* 
+### *Assurez-vous d'activer l'environnement au préalable*
 **Exemple :**  
 ```bash
 importE create --db ma_base --table ma_table --columns nom:TEXT age:INTEGER
