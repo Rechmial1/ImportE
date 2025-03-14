@@ -46,7 +46,7 @@ def import_excel(db_name, table_name, file_path):
     df = pd.read_excel(file_path)
 
     # Vérification et traitement des données
-    df = df.applymap(lambda x: float(x) if isinstance(x, int) and x > 9_223_372_036_854_775_807 else x)
+    df = df.map(lambda x: float(x) if isinstance(x, int) and x > 9_223_372_036_854_775_807 else x)
 
     # Insertion des données dans la table SQLite
     df.to_sql(table_name, conn, if_exists='append', index=False)
